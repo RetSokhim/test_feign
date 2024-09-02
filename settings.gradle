@@ -1,0 +1,4 @@
+rootProject.name = 'open-feign'
+include 'student-service'
+include 'card-service'
+
