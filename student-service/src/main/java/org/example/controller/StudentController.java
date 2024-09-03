@@ -5,6 +5,8 @@ import org.example.model.request.StudentRequest;
 import org.example.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/v1/student")
 public class StudentController {
@@ -20,5 +22,19 @@ public class StudentController {
     @PostMapping("create-student")
     public Student createStudent(@RequestBody StudentRequest studentRequest){
         return studentService.createStudent(studentRequest);
+    }
+    @GetMapping("get-all-student")
+    public List<Student> getAllStudent(){
+        return studentService.getAllStudent();
+    }
+    @DeleteMapping("delete-student/{studentId}")
+    public String deleteStudentById(@PathVariable Long studentId){
+        studentService.deleteStudentById(studentId);
+        return "Delete student Successfully";
+    }
+
+    @PutMapping("update-student/{studentId}")
+    public Student updateStudentById(@PathVariable Long studentId,@RequestBody StudentRequest studentRequest){
+        return studentService.updateStudentById(studentId,studentRequest);
     }
 }

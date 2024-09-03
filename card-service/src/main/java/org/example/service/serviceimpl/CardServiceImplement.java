@@ -15,7 +15,7 @@ public class CardServiceImplement implements CardService {
     }
 
     @Override
-    public Card getCardbyId(Long cardId) {
+    public Card getCardById(Long cardId) {
         return cardRepository.findById(cardId).orElseThrow();
     }
 
@@ -25,6 +25,24 @@ public class CardServiceImplement implements CardService {
         card.setStudentId(cardRequest.getStudentId());
         card.setCardDetail(cardRequest.getCardDetail());
         card.setCardCode(cardRequest.getCardCode());
+        return cardRepository.save(card);
+    }
+
+    @Override
+    public Card getCardByStudentId(Long studentId) {
+        return cardRepository.findCardByStudentId(studentId);
+    }
+
+    @Override
+    public void deleteCardByStudentId(Long studentId) {
+        cardRepository.deleteCardByStudentId(studentId);
+    }
+
+    @Override
+    public Card updateCardByStudentId(CardRequest cardRequest) {
+        Card card = cardRepository.findCardByStudentId(cardRequest.getStudentId());
+        card.setCardCode(cardRequest.getCardCode());
+        card.setCardDetail(card.getCardDetail());
         return cardRepository.save(card);
     }
 }

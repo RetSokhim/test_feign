@@ -4,6 +4,9 @@ import org.example.model.Card;
 import org.example.model.request.CardRequest;
 
 public interface CardService {
-    Card getCardbyId(Long cardId);
+    Card getCardById(Long cardId);
     Card createCard(CardRequest cardRequest);
+    Card getCardByStudentId(Long studentId);
+    void deleteCardByStudentId(Long studentId);
+    Card updateCardByStudentId(CardRequest cardRequest);
 }

@@ -16,11 +16,24 @@ public class CardController {
 
     @GetMapping("get-card/{cardId}")
     public Card getCardById(@PathVariable Long cardId){
-        return cardService.getCardbyId(cardId);
+        return cardService.getCardById(cardId);
     }
 
     @PostMapping("create-card")
     public Card createCard (@RequestBody CardRequest cardRequest){
         return cardService.createCard(cardRequest);
+    }
+    @GetMapping("get-card-by-student/{studentId}")
+    public Card getCardByStudentId(@PathVariable Long studentId){
+        return cardService.getCardByStudentId(studentId);
+    }
+    @DeleteMapping("delete-card-by-student/{studentId}")
+    public void deleteCardByStudentId(@PathVariable Long studentId){
+        cardService.deleteCardByStudentId(studentId);
+    }
+
+    @PutMapping("update-card")
+    public Card updateCardByStudentId(@RequestBody CardRequest cardRequest){
+        return cardService.updateCardByStudentId(cardRequest);
     }
 }
