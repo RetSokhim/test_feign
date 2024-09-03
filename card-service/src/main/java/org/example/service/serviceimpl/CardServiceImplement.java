@@ -22,6 +22,7 @@ public class CardServiceImplement implements CardService {
     @Override
     public Card createCard(CardRequest cardRequest) {
         Card card = new Card();
+        card.setStudentId(cardRequest.getStudentId());
         card.setCardDetail(cardRequest.getCardDetail());
         card.setCardCode(cardRequest.getCardCode());
         return cardRepository.save(card);

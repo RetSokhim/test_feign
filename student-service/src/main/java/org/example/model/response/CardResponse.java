@@ -14,27 +14,27 @@ public class CardResponse {
     private Integer cardCode;
     private String cardDetail;
 
-    public Long getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(Long cardId) {
-        this.cardId = cardId;
-    }
-
-    public Integer getCardCode() {
-        return cardCode;
-    }
-
-    public void setCardCode(Integer cardCode) {
-        this.cardCode = cardCode;
-    }
-
-    public String getCardDetail() {
-        return cardDetail;
-    }
-
-    public void setCardDetail(String cardDetail) {
-        this.cardDetail = cardDetail;
-    }
+//    public Long getCardId() {
+//        return cardId;
+//    }
+//
+//    public void setCardId(Long cardId) {
+//        this.cardId = cardId;
+//    }
+//
+//    public Integer getCardCode() {
+//        return cardCode;
+//    }
+//
+//    public void setCardCode(Integer cardCode) {
+//        this.cardCode = cardCode;
+//    }
+//
+//    public String getCardDetail() {
+//        return cardDetail;
+//    }
+//
+//    public void setCardDetail(String cardDetail) {
+//        this.cardDetail = cardDetail;
+//    }
 }

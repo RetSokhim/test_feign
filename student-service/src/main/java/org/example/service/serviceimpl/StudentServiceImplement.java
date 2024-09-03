@@ -33,13 +33,15 @@ public class StudentServiceImplement implements StudentService {
     public Student createStudent(StudentRequest studentRequest) {
         Student student = new Student();
         CardRequest card = new CardRequest();
-        card.setCardCode(studentRequest.getCardCode());
-        card.setCardDetail(studentRequest.getCardDetail());
-        CardResponse cardResponse = cardServiceFeignClient.createCardById(card);
         student.setStudentAge(studentRequest.getStudentAge());
         student.setStudentName(studentRequest.getStudentName());
         student.setPhoneNumber(studentRequest.getPhoneNumber());
-        student.setCard(cardResponse);
-        return studentRepository.save(student);
+        Student studentResponse = studentRepository.save(student);
+        card.setStudentId(studentResponse.getStudentId());
+        card.setCardCode(studentRequest.getCardCode());
+        card.setCardDetail(studentRequest.getCardDetail());
+        CardResponse cardResponse = cardServiceFeignClient.createCardById(card);
+        studentResponse.setCard(cardResponse);
+        return studentResponse;
     }
 }
