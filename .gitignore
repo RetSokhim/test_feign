@@ -35,3 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
+
+/card-service/src/main/resources/application-card-service.yml
