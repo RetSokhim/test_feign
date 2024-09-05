@@ -1,0 +1,11 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/card_service_db
+#    username: postgres
+#    password: 092367169
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
